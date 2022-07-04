@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:28:59 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/04 19:29:17 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/04 19:35:14 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ static int	select_print(char flag, void *content)
 
 	print_cnt = 0;
 	if (flag == 'd' || flag == 'i')
-		print_cnt += ft_putnbr((int *)content);
+		print_cnt += ft_putnbr(*(int *)content);
 	else if (flag == 's')
 		print_cnt += ft_putstr((char *)content);
 	else if (flag == 'p')
-		print_cnt += ft_putptr((unsigned long long *)content);
+		print_cnt += ft_putptr(*(unsigned long long *)content);
 	else if (flag == 'u')
-		print_cnt += ft_putuint((unsigned int *)content);
+		print_cnt += ft_putuint(*(unsigned int *)content);
 	else if (flag == 'x')
-		print_cnt += ft_puthex_l((int *)content);
+		print_cnt += ft_puthex_l(*(int *)content);
 	else if (flag == 'X')
-		print_cnt += ft_puthex_u((int *)content);
+		print_cnt += ft_puthex_u(*(int *)content);
 	else if (flag == '%')
 	{
 		write(1, "%", 1);
