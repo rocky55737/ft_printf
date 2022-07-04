@@ -6,11 +6,14 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:28:59 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/04 19:35:14 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/04 19:38:07 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	do_printf(va_list arg_ptr, const char *fmt);
+static int	select_print(char flag, void *content);
 
 int	ft_printf(const char *format, ...)
 {
