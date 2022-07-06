@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_putuint.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 18:55:58 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/06 15:58:00 by rhong            ###   ########.fr       */
+/*   Created: 2022/07/06 16:06:58 by rhong             #+#    #+#             */
+/*   Updated: 2022/07/06 16:11:58 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int			ft_putuint(unsigned int content);
+static void	display_uint(unsigned int n, int *cnt);
 
-int	ft_putchr(char content);
-int	ft_putnbr(int content);
-int	ft_putstr(char *content);
-int	ft_putptr(void *content);
-int	ft_putuint(unsigned int content);
-int	ft_puthex_l(int content);
-int	ft_puthex_u(int content);
-int	ft_printf(const char *format, ...);
+int	ft_putuint(unsigned int content)
+{
+	int	cnt;
 
-#endif
+	cnt = 0;
+	display_uint(content, &cnt);
+	return (cnt);
+}
+
+static void	display_uint(unsigned int n, int *cnt)
+{
+	(*cnt)++;
+	if (n > 10)
+		display_uint(n / 10, cnt);
+	write(1, &"0123456789"[n % 10], 1);
+}
