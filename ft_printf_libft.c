@@ -6,13 +6,18 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 19:22:50 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/04 19:31:29 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/06 19:22:10 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int			ft_putchr(char c);
+int			ft_putnbr(int n);
+int			ft_putstr(char *s);
+static void	display_nbr(int n, int *cnt);
+
+int	ft_putchr(char c)
 {
 	write(1, &c, 1);
 	return (1);

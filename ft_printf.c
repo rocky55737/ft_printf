@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:28:59 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/04 19:38:07 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/06 19:21:44 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static int	do_printf(va_list arg_ptr, const char *fmt);
 static int	select_print(char flag, void *content);
+int			ft_printf(const char *format, ...);
 
 int	ft_printf(const char *format, ...)
 {
@@ -61,7 +62,7 @@ static int	select_print(char flag, void *content)
 	else if (flag == 's')
 		print_cnt += ft_putstr((char *)content);
 	else if (flag == 'p')
-		print_cnt += ft_putptr(*(unsigned long long *)content);
+		print_cnt += ft_putptr(content);
 	else if (flag == 'u')
 		print_cnt += ft_putuint(*(unsigned int *)content);
 	else if (flag == 'x')

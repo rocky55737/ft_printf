@@ -6,7 +6,7 @@
 #    By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 14:45:33 by rhong             #+#    #+#              #
-#    Updated: 2022/07/06 17:10:06 by rhong            ###   ########.fr        #
+#    Updated: 2022/07/06 18:25:11 by rhong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,14 @@ OBJS = $(SRCS:.c=.o)
 
 all : $(NAME) $(HEADER)
 
-$(NAME): $(TOTAL_OBJS)
+$(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $<
 
 clean :
-	rm -rf $(OBJS) $(OBJS_B)
+	rm -rf $(OBJS)
 
 fclean : clean
 	rm -rf $(NAME)
