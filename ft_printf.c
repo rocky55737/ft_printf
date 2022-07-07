@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:28:59 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/06 19:21:44 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/07 17:20:37 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ static int	do_printf(va_list arg_ptr, const char *fmt)
 	{
 		if (fmt[fmt_idx] == '%' && fmt[fmt_idx + 1])
 		{
-			next_chr = fmt[fmt_idx + 1];
+			fmt_idx++;
+			next_chr = fmt[fmt_idx];
 			print_cnt += select_print(next_chr, arg_ptr);
 			arg_ptr++;
-			fmt_idx++;
 		}
 		else
 			print_cnt += ft_putchr(fmt[fmt_idx]);
