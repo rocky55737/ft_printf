@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 19:22:50 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/06 19:22:10 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/07 19:06:29 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ int	ft_putstr(char *s)
 
 	cnt = 0;
 	if (!s)
-		return (cnt);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (*s)
 	{
 		write(1, s++, 1);

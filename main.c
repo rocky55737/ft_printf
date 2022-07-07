@@ -3,11 +3,11 @@
 
 int main(void)
 {
-	int a = 31;
+	int a = -9;
 
-	ft_printf("%d, %x, %p\n", a, a, &a);
+	ft_printf("%x, %X\n", a, a);
 	write(1, "\n\n\n", 3);
-	printf("%d, %x, %p\n", a, a, &a);
+	a = printf("%x, %X\n", a, a);
 
 	return (0);
 }

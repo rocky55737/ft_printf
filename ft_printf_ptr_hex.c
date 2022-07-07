@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:40:31 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/06 16:05:20 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/07 19:19:54 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int			ft_putptr(void *content);
 int			ft_puthex_l(int content);
 int			ft_puthex_u(int content);
 static void	display_hex(unsigned long long n, int *cnt);
-static void	display_hex_u(int n, int *cnt);
+static void	display_hex_u(unsigned int n, int *cnt);
 
 int	ft_putptr(void *content)
 {
@@ -54,10 +54,10 @@ static void	display_hex(unsigned long long n, int *cnt)
 	write(1, &"0123456789abcdef"[n % 16], 1);
 }
 
-static void	display_hex_u(int n, int *cnt)
+static void	display_hex_u(unsigned int n, int *cnt)
 {
 	(*cnt)++;
 	if (n >= 16)
-		display_hex(n / 16, cnt);
+		display_hex_u(n / 16, cnt);
 	write(1, &"0123456789ABCDEF"[n % 16], 1);
 }
