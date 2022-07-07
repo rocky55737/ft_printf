@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_ptr_hex.c                                :+:      :+:    :+:   */
+/*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:40:31 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/07 19:19:54 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/07 19:48:56 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_putptr(void *content);
 int			ft_puthex_l(int content);
 int			ft_puthex_u(int content);
-static void	display_hex(unsigned long long n, int *cnt);
+static void	display_hex(unsigned int n, int *cnt);
 static void	display_hex_u(unsigned int n, int *cnt);
-
-int	ft_putptr(void *content)
-{
-	int	cnt;
-
-	cnt = 0;
-	write(1, "0x", 2);
-	display_hex((unsigned long long)content, &cnt);
-	return (cnt + 2);
-}
 
 int	ft_puthex_l(int content)
 {
@@ -46,7 +35,7 @@ int	ft_puthex_u(int content)
 	return (cnt);
 }
 
-static void	display_hex(unsigned long long n, int *cnt)
+static void	display_hex(unsigned int n, int *cnt)
 {
 	(*cnt)++;
 	if (n >= 16)
