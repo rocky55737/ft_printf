@@ -70,7 +70,7 @@ static int	select_print(char flag, va_list *arg_d_ptr)
 		print_cnt += ft_puthex_l(va_arg(*arg_d_ptr, unsigned int));
 	else if (flag == 'X')
 		print_cnt += ft_puthex_u(va_arg(*arg_d_ptr, unsigned int));
-	else if (flag == '%')
+	else
 	{
 		write(1, "%", 1);
 		print_cnt++;

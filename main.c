@@ -5,9 +5,9 @@ int main(void)
 {
 	int a = -9;
 
-	ft_printf("%x, %X, %p\n", a, a, a);
+	ft_printf("%x this is %j %%the te%%st %X\n", a, a);
 	write(1, "\n\n\n", 3);
-	printf("%x, %X, %p\n", a, a, a);
+	printf("%x this is %j %%the te%%st %X\n", a, a);
 
 	return (0);
 }
