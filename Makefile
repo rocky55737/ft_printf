@@ -22,9 +22,9 @@ AR = ar
 ARFLAGS = -rcs
 OBJS = $(SRCS:.c=.o)
 
-all : $(NAME) $(HEADER)
+all : $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 	$(AR) $(ARFLAGS) $@ $^
 
 %.o : %.c
