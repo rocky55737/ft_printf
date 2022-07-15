@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:28:59 by rhong             #+#    #+#             */
-/*   Updated: 2022/07/07 17:50:21 by rhong            ###   ########.fr       */
+/*   Updated: 2022/07/15 16:24:28 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	select_print(char flag, va_list *arg_d_ptr)
 		print_cnt += ft_puthex_l(va_arg(*arg_d_ptr, unsigned int));
 	else if (flag == 'X')
 		print_cnt += ft_puthex_u(va_arg(*arg_d_ptr, unsigned int));
-	else
+	else if (flag == '%')
 	{
 		write(1, "%", 1);
 		print_cnt++;
